@@ -2,8 +2,9 @@
 
 {% block conteudo %}
     <h1>Adicionar Tarefa</h1>
-    <form action="{% url 'tasks:add' %}" method="post">
-        <input type="text">
+    <form action="{% url 'tasks:adicionar' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
         <button type="submit">Adcionar</button>
     </form>
     <a href="{% url 'tasks:index' %}">Ver Tarefas</a>
